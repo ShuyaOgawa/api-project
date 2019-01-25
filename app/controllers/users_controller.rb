@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
+  skip_before_filter :verify_authenticity_token, only: :create
 
   # GET /users
   def index
